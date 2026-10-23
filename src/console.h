@@ -28,6 +28,8 @@ public:
     static void putChar(int x, int y, char ch, int colorCode);
     static void eraseChar(int x, int y);
     static void sleepMs(int ms);
+    // Монотонное время в миллисекундах (для планирования без потоков)
+    static long long currentTimeMs();
     static bool escPressed();
     static int getWidth();
     static int getHeight();

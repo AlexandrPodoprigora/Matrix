@@ -1,3 +1,4 @@
+#include <chrono>
 #include <cstdlib>
 #include <ctime>
 #include <conio.h>
@@ -91,6 +92,11 @@ void Console::eraseChar(int x, int y) {
 
 void Console::sleepMs(int ms) {
     Sleep(static_cast<DWORD>(ms));
+}
+
+long long Console::currentTimeMs() {
+    using namespace std::chrono;
+    return duration_cast<milliseconds>(steady_clock::now().time_since_epoch()).count();
 }
 
 bool Console::escPressed() {
